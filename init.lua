@@ -150,7 +150,7 @@ vim.o.splitbelow = true
 --   See `:help lua-options`
 --   and `:help lua-options-guide`
 vim.o.list = true
-vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
+vim.opt.listchars = { tab = '¬ª ', trail = '¬∑', nbsp = '‚ê£' }
 
 -- Preview substitutions live, as you type!
 vim.o.inccommand = 'split'
@@ -278,7 +278,7 @@ require('lazy').setup({
         add = { text = '+' },
         change = { text = '~' },
         delete = { text = '_' },
-        topdelete = { text = '‾' },
+        topdelete = { text = '‚Äæ' },
         changedelete = { text = '~' },
       },
     },
@@ -315,10 +315,10 @@ require('lazy').setup({
           Down = '<Down> ',
           Left = '<Left> ',
           Right = '<Right> ',
-          C = '<C-…> ',
-          M = '<M-…> ',
-          D = '<D-…> ',
-          S = '<S-…> ',
+          C = '<C-‚Ä¶> ',
+          M = '<M-‚Ä¶> ',
+          D = '<D-‚Ä¶> ',
+          S = '<S-‚Ä¶> ',
           CR = '<CR> ',
           Esc = '<Esc> ',
           ScrollWheelDown = '<ScrollWheelDown> ',
@@ -634,10 +634,10 @@ require('lazy').setup({
         underline = { severity = vim.diagnostic.severity.ERROR },
         signs = vim.g.have_nerd_font and {
           text = {
-            [vim.diagnostic.severity.ERROR] = '󰅚 ',
-            [vim.diagnostic.severity.WARN] = '󰀪 ',
-            [vim.diagnostic.severity.INFO] = '󰋽 ',
-            [vim.diagnostic.severity.HINT] = '󰌶 ',
+            [vim.diagnostic.severity.ERROR] = 'Û∞Öö ',
+            [vim.diagnostic.severity.WARN] = 'Û∞Ä™ ',
+            [vim.diagnostic.severity.INFO] = 'Û∞ãΩ ',
+            [vim.diagnostic.severity.HINT] = 'Û∞å∂ ',
           },
         } or {},
         virtual_text = {
@@ -986,28 +986,42 @@ require('lazy').setup({
   --  Uncomment the following line and add your plugins to `lua/custom/plugins/*.lua` to get going.
   -- { import = 'custom.plugins' },
   --
-  -- For additional information with loading, sourcing and examples see `:help lazy.nvim-🔌-plugin-spec`
+  -- For additional information with loading, sourcing and examples see `:help lazy.nvim-üîå-plugin-spec`
   -- Or use telescope!
   -- In normal mode type `<space>sh` then write `lazy.nvim-plugin`
   -- you can continue same window with `<space>sr` which resumes last telescope search
+
+  -- My stuff
+  {
+    'nvim-neo-tree/neo-tree.nvim',
+    branch = 'v3.x',
+    dependencies = {
+      'nvim-lua/plenary.nvim',
+      'nvim-tree/nvim-web-devicons',
+      'MunifTanjim/nui.nvim',
+    },
+    config = function()
+      vim.keymap.set('n', '<leader>tt', ':Neotree filesystem reveal left<CR>', {})
+    end,
+  },
 }, {
   ui = {
     -- If you are using a Nerd Font: set icons to an empty table which will use the
     -- default lazy.nvim defined Nerd Font icons, otherwise define a unicode icons table
     icons = vim.g.have_nerd_font and {} or {
-      cmd = '⌘',
-      config = '🛠',
-      event = '📅',
-      ft = '📂',
-      init = '⚙',
-      keys = '🗝',
-      plugin = '🔌',
-      runtime = '💻',
-      require = '🌙',
-      source = '📄',
-      start = '🚀',
-      task = '📌',
-      lazy = '💤 ',
+      cmd = '‚åò',
+      config = 'üõ†',
+      event = 'üìÖ',
+      ft = 'üìÇ',
+      init = '‚öô',
+      keys = 'üóù',
+      plugin = 'üîå',
+      runtime = 'üíª',
+      require = 'üåô',
+      source = 'üìÑ',
+      start = 'üöÄ',
+      task = 'üìå',
+      lazy = 'üí§ ',
     },
   },
 })
